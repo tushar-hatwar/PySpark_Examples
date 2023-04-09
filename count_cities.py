@@ -35,3 +35,23 @@ result = final_count.collect()
 
 for a in result:
     print(a)
+
+#Databricks Code using parallelize
+input = sc.parallelize(["Delhi",
+"Dehradun",
+"Banglore",
+"Pune",
+"Patna",
+"Pondicherry"])
+
+# one input row will give one output row only
+word_counts = input.map(lambda x: (x[0], 1))
+
+# take two rows , and does aggregation and returns one row
+final_count = word_counts.reduceByKey(lambda x, y: x + y)
+
+# action
+result = final_count.collect()
+
+for a in result:
+    print(a)
