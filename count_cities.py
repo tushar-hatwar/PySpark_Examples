@@ -1,3 +1,20 @@
+"""
+Problem Statement:
+
+> Find distinct cities based on their first letter
+Delhi
+Dehradun
+Banglore
+Pune
+Patna
+Pondicherry
+
+Output:
+D 2
+B 1
+P 3
+"""
+
 import os
 import sys
 from pyspark import SparkContext
